@@ -1,0 +1,30 @@
+<header>
+  <img
+    src="../../../assets/International_Pokémon_logo.svg.png"
+    alt="pokemon logo"
+  />
+  <div>
+    <img src="../../../assets/download-removebg-preview.png" alt="pokebola" />
+    <h3>Pokedex</h3>
+  </div>
+</header>
+<div class="list-container">
+  <div>
+    <div *ngIf="loading" class="loading">Loading...</div>
+    <div *ngIf="!loading" class="cards-container">
+      <div *ngFor="let pokemon of pokemonList">
+        <a routerLink="/detail">
+          <app-pokemon-card
+            [id]="pokemon.id"
+            [imgSrc]="pokemon.sprites.front_default"
+            [name]="pokemon.name"
+            [weight]="pokemon.weight"
+            [height]="pokemon.height"
+            [types]="pokemon.types"
+          >
+          </app-pokemon-card>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

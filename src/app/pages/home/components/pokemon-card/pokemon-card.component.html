@@ -1,0 +1,36 @@
+
+  <div
+  class="card-container"
+  [ngStyle]="{ 'border-color': getTypeBorderColor(types[0].type.name) }"
+>
+  <div class="id-container">
+    <span>#{{ id }}</span>
+    <span
+      [ngStyle]="{
+        'background-color': getTypeBorderColor(types[0].type.name),
+        'box-shadow': getBoxShadow(types[0].type.name)
+      }"
+    ></span>
+  </div>
+  <div>
+    <img class="pokemon-image" [src]="imgSrc" alt="" />
+  </div>
+  <div class="name-container">
+    <h2>{{ name }}</h2>
+  </div>
+  <div class="dimensions-container">
+    <div class="messure-container">
+      <h4>Weight</h4>
+      <h4>{{ weight }} Kg</h4>
+    </div>
+    <div class="messure-container">
+      <h4>Height</h4>
+      <h4>{{ height }} m</h4>
+    </div>
+  </div>
+  <div class="type-container">
+    <span>Type: </span>
+    <span *ngFor="let type of types">{{ type.type.name }}</span>
+  </div>
+</div>
+
